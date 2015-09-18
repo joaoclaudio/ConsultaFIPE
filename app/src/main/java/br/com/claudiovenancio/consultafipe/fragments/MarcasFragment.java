@@ -3,7 +3,6 @@ package br.com.claudiovenancio.consultafipe.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,18 +51,15 @@ public class MarcasFragment extends Fragment {
 
     Ion.with(getActivity())
         .load("http://fipeapi.appspot.com/api/1/carros/marcas.json")
-        .as(new TypeToken<List<Marca>>(){})
+        .as(new TypeToken<List<Marca>>() {
+        })
         .setCallback(new FutureCallback<List<Marca>>() {
           @Override
           public void onCompleted(Exception e, List<Marca> result) {
-            for (Marca marca: result) {
-              Log.d("MarcaFragment", marca.getName() + ", "
-                  + marca.getKey());
-            }
-            listMarca.setAdapter(new MarcaAdapter(getActivity(),
-                R.layout.item_marca, result));
+            MarcaAdapter adapter = new MarcaAdapter(getContext(),
+                R.layout.item_marca, result);
+            listMarca.setAdapter(adapter);
           }
         });
-
   }
 }

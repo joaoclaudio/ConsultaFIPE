@@ -45,8 +45,8 @@ public class MarcaAdapter extends ArrayAdapter<Marca> {
           .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
       linha = inflater.inflate(resource, parent, false);
       ViewHolder viewHolder = new ViewHolder();
-      viewHolder.name = (TextView) convertView.findViewById(R.id.marca_name);
-      viewHolder.key = (TextView) convertView.findViewById(R.id.marca_key);
+      viewHolder.name = (TextView) linha.findViewById(R.id.marca_name);
+      viewHolder.key = (TextView) linha.findViewById(R.id.marca_key);
       linha.setTag(viewHolder);
     }
     ViewHolder holder = (ViewHolder) linha.getTag();

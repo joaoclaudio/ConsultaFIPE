@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     getSupportFragmentManager().beginTransaction()
-        .add(MarcasFragment.newInstance(), MarcasFragment.class.getSimpleName()).commit();
-
+        .replace(R.id.frame_container,MarcasFragment.newInstance())
+        .commit();
   }
 }
