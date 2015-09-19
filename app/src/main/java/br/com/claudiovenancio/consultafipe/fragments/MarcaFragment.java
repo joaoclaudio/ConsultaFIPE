@@ -26,16 +26,16 @@ import butterknife.ButterKnife;
 /**
  * Created by joaoclaudio on 16/09/15.
  */
-public class MarcasFragment extends Fragment implements AdapterView.OnItemClickListener {
+public class MarcaFragment extends Fragment implements AdapterView.OnItemClickListener {
 
   @Bind(R.id.list_marca)
   ListView listMarca;
 
-  public static MarcasFragment newInstance() {
+  public static MarcaFragment newInstance() {
 
     Bundle args = new Bundle();
 
-    MarcasFragment fragment = new MarcasFragment();
+    MarcaFragment fragment = new MarcaFragment();
     fragment.setArguments(args);
     return fragment;
   }
