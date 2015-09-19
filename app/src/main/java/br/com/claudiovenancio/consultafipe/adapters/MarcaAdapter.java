@@ -17,6 +17,8 @@ import br.com.claudiovenancio.consultafipe.entities.Marca;
  */
 public class MarcaAdapter extends ArrayAdapter<Marca> {
 
+  public static final String ID_MARCA = "ID_MARCA";
+
   private final Context context;
   private final int resource;
   private final List<Marca> listMarcas;
@@ -37,7 +39,6 @@ public class MarcaAdapter extends ArrayAdapter<Marca> {
   public View getView(int position, View convertView, ViewGroup parent) {
 
     Marca marca = listMarcas.get(position);
-
     View linha = convertView;
 
     if (linha == null){
